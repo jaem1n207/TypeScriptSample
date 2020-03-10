@@ -1,0 +1,3 @@
+# TypeScriptSample
+
+Practice TypeScript
