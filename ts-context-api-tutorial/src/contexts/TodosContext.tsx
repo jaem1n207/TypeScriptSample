@@ -19,3 +19,23 @@ type TodosDispatch = Dispatch<Action>;
 const TodosDispatchContext = createContext<TodosDispatch | undefined>(
   undefined
 );
+
+function todosReducer(state: TodosState, action: Action): TodosState {
+  switch (action.type) {
+    case "CREATE":
+      const nextId = Math.max(...state.map(todo => todo.id)) + 1;
+      return state.concat({
+        id: nextId,
+        text: action.text,
+        done: false
+      });
+    case "TOGGLE":
+      return state.map(todo =>
+        todo.id === action.id ? { ...todo, done: !todo.done } : todo
+      );
+    case "REMOVE":
+      return state.filter(todo => todo.id !== action.id);
+    default:
+      throw new Error("Unhandled action");
+  }
+}
