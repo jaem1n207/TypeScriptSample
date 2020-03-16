@@ -1,12 +1,8 @@
 import React from "react";
-import "./App.css";
+import CounterContainer from "./containers/CounterContainer";
 
 function App() {
-  return (
-    <div>
-      <h1>Hello</h1>
-    </div>
-  );
+  return <CounterContainer />;
 }
 
 export default App;
