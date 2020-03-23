@@ -1,4 +1,4 @@
-import { createReducer, action } from "typesafe-actions";
+import { createReducer } from "typesafe-actions";
 import { TodosState, TodosAction } from "./types";
 import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from "./actions";
 
