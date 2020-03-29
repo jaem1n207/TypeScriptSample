@@ -21,7 +21,13 @@ const GithubProfileInfo = ({
         <div className={name}>{name}</div>
       </div>
       <p>{bio}</p>
-      <div>{blog !== "" && <a href={blog}>블로그</a>}</div>
+      <div>
+        {blog !== "" && (
+          <a href={blog} target="_blank">
+            블로그
+          </a>
+        )}
+      </div>
     </div>
   );
 };

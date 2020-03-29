@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function getUserProfile(username: string) {
   const response = await axios.get<GithubProfile>(
-    `https://github.com/users/${username}`
+    `https://api.github.com/users/${username}`
   );
   return response.data;
 }
