@@ -6,13 +6,15 @@ type GithubProfileInfoProps = {
   thumbnail: string;
   bio: string;
   blog: string;
+  created_at: Date;
 };
 
 const GithubProfileInfo = ({
   name,
   thumbnail,
   bio,
-  blog
+  blog,
+  created_at
 }: GithubProfileInfoProps) => {
   return (
     <div className="GithubProfileInfo">
@@ -21,6 +23,7 @@ const GithubProfileInfo = ({
         <div className={name}>{name}</div>
       </div>
       <p>{bio}</p>
+      <p>생성일: {created_at}</p>
       <div>
         {blog !== "" && (
           <a href={blog} target="_blank">

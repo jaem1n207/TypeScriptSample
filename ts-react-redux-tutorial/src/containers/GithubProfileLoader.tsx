@@ -26,6 +26,7 @@ const GithubProfileLoader = () => {
           blog={data.blog}
           name={data.name}
           thumbnail={data.avatar_url}
+          created_at={data.created_at}
         />
       )}
     </>
