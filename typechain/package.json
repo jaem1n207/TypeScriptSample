@@ -7,7 +7,12 @@
   "author": "Jaemin Lee <roy.jm.lee@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
-    "restart": "tsc"
+    "start": "tsc-watch --onSuccess \" node dist/index.js \""
+  },
+  "devDependencies": {
+    "tsc-watch": "^4.2.9"
+  },
+  "dependencies": {
+    "typescript": "^3.9.7"
   }
 }
