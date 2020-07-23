@@ -64,6 +64,7 @@ const createNewBlock = (data: string): Block => {
     data,
     newTimestamp
   );
+  addBlock(newBlock);
   return newBlock;
 };
 
@@ -75,7 +76,8 @@ const getHashforBlock = (aBlock: Block): string =>
     aBlock.data
   );
 
-const isBlockBalid = (candidateBlock: Block, previousBlock: Block): boolean => {
+/* 이전과 새로운 블록을 검증 */
+const isBlockValid = (candidateBlock: Block, previousBlock: Block): boolean => {
   // 블록의 구조가 유효한지 체크
   if (!Block.validateStructure(candidateBlock)) {
     return false;
@@ -90,6 +92,16 @@ const isBlockBalid = (candidateBlock: Block, previousBlock: Block): boolean => {
   }
 };
 
-console.log(createNewBlock("helllo"), createNewBlock("bye bye"));
+const addBlock = (candidateBlock: Block): void => {
+  if (isBlockValid(candidateBlock, getLatestBlock())) {
+    blockChain.push(candidateBlock);
+  }
+};
+
+createNewBlock("second block");
+createNewBlock("third block");
+createNewBlock("fourth block");
+
+console.log(blockChain);
 
 export {};
